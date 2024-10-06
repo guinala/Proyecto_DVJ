@@ -3,29 +3,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Speed")]
-    public float speedMovement;
+    [Header("Movement")]
+    [SerializeField] private float speedMovement;
+    [SerializeField] private float rotationSpeed;
     
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private Transform groundCheck; 
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+    private bool isGrounded; 
+    
+    [Header("Dependencies")]
     private Rigidbody rigidbody;
+    private Animator _animator;
     
     [Header("Smooth Input")]
     private PlayerInput _playerControls;
     private InputAction _movementAction;
+    private InputAction _jumpAction;
     private Vector2 currentInput;
     private Vector2 smoothInputVelocity;
     private Vector3 moveInput;
     [SerializeField] private float smoothInputSpeed = .5f;
     
-    private Vector2 _movement;
-    private float _movementMagnitude;
-    public Vector2 Movement => _movement;
-    
-    private Animator _animator;
-    private bool _isWalking;
-    
     [Header("Animator Parameters")]
     private readonly int directionX = Animator.StringToHash("DirectionX");
     private readonly int directionY = Animator.StringToHash("DirectionY");
+    private readonly int jump = Animator.StringToHash("Jump");
     private readonly int speed = Animator.StringToHash("Speed");
 
     private void Awake()
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _movementAction = _playerControls.actions["Movement"];
+        _jumpAction = _playerControls.actions["Jump"];
     }
     
 
@@ -45,18 +51,26 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        CheckGroundStatus();
     }
     
     private void MovePlayer()
     {
+        //Moving
         if(moveInput != Vector3.zero)
         {
             rigidbody.MovePosition(rigidbody.position + moveInput * speedMovement * Time.fixedDeltaTime);
         }
+        
+        // Rotate player 
+        float rotation = moveInput.x * rotationSpeed * Time.fixedDeltaTime;
+        Quaternion rotationQuat = Quaternion.Euler(0f, rotation, 0f);
+        rigidbody.MoveRotation(rigidbody.rotation * rotationQuat);
     }
 
     public void OnMovement()
     {
+        //Movement
         Vector2 movementInput = _movementAction.ReadValue<Vector2>();
         currentInput = Vector2.SmoothDamp(currentInput, movementInput, ref smoothInputVelocity, smoothInputSpeed);
         float inputSpeed = currentInput.sqrMagnitude;
@@ -72,13 +86,26 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetFloat(speed, 0);
         }
-        _animator.SetFloat("DirectionX", movementInput.x);
-        _animator.SetFloat("DirectionY", movementInput.y);
+        _animator.SetFloat(directionX, movementInput.x);
+        _animator.SetFloat(directionY, movementInput.y);
+        
+        //Jumping
+        if (_jumpAction.triggered)
+        {
+            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _animator.SetBool(jump, true);
+        }
     }
     
-
-    private void StopMovement(InputAction.CallbackContext value)
+    private void CheckGroundStatus()
     {
-        _movement = Vector2.zero;
+        // Raycast
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
+
+        // Está en el suelo
+        if (isGrounded)
+        {
+            _animator.SetBool(jump, false);
+        }
     }
 }
