@@ -60,12 +60,12 @@ public class PlayerController : MonoBehaviour
         if(moveInput != Vector3.zero)
         {
             rigidbody.MovePosition(rigidbody.position + moveInput * speedMovement * Time.fixedDeltaTime);
+            
+            // Rotar hacia la dirección del movimiento
+            Quaternion targetRotation = Quaternion.LookRotation(moveInput, Vector3.up);
+            Quaternion smoothRotation = Quaternion.Slerp(rigidbody.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            rigidbody.MoveRotation(smoothRotation);
         }
-        
-        // Rotate player 
-        float rotation = moveInput.x * rotationSpeed * Time.fixedDeltaTime;
-        Quaternion rotationQuat = Quaternion.Euler(0f, rotation, 0f);
-        rigidbody.MoveRotation(rigidbody.rotation * rotationQuat);
     }
 
     public void OnMovement()
@@ -90,10 +90,11 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(directionY, movementInput.y);
         
         //Jumping
-        if (_jumpAction.triggered)
+        if (_jumpAction.triggered && isGrounded)
         {
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             _animator.SetBool(jump, true);
+            isGrounded = false;
         }
     }
     
