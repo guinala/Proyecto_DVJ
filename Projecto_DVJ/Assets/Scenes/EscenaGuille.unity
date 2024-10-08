@@ -480,7 +480,7 @@ MonoBehaviour:
   audioSource: {fileID: 1131853175}
   jumpClip: {fileID: 8300000, guid: eed2451bbd4264da8b6c27c92df62faf, type: 3}
   speedMovement: 1
-  rotationSpeed: 1
+  rotationSpeed: 25
   jumpForce: 5
   groundCheck: {fileID: 417950537}
   groundLayer:

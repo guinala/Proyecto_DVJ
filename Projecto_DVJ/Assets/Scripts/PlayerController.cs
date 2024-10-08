@@ -63,19 +63,6 @@ public class PlayerController : MonoBehaviour
         //Moving
         if(moveInput != Vector3.zero)
         {
-            // Si el vector de movimiento tiene magnitud (es decir, si nos estamos moviendo)
-            if (moveInput.magnitude > 0)
-            {
-                // Rotamos el personaje hacia la dirección de movimiento suavemente
-                //Quaternion targetRotation = Quaternion.LookRotation(moveInput);
-                //transform.rotation = Quaternion.Slerp(rigidbody.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-                
-                //Instantaneo
-                //transform.LookAt(transform.position + moveInput);
-                Quaternion targetRotation = Quaternion.LookRotation(moveInput);
-                transform.rotation = targetRotation;
-            }
-
             // Movemos al personaje con el Rigidbody
             rigidbody.MovePosition(rigidbody.position + moveInput * speedMovement * Time.fixedDeltaTime);
         }
@@ -85,9 +72,10 @@ public class PlayerController : MonoBehaviour
     {
         //Movement
         Vector2 movementInput = _movementAction.ReadValue<Vector2>();
-        currentInput = Vector2.SmoothDamp(currentInput, movementInput, ref smoothInputVelocity, smoothInputSpeed);
-        float inputSpeed = currentInput.sqrMagnitude;
-        moveInput = new Vector3(currentInput.x, 0, currentInput.y);
+        //currentInput = Vector2.SmoothDamp(currentInput, movementInput, ref smoothInputVelocity, smoothInputSpeed);
+        //float inputSpeed = currentInput.sqrMagnitude;
+        moveInput = new Vector3(movementInput.x, 0, movementInput.y);
+        float inputSpeed = movementInput.sqrMagnitude;
         
 
         // Asignar la velocidad suavizada al Animator
@@ -102,6 +90,25 @@ public class PlayerController : MonoBehaviour
         _animator.speed = 1.5f;
         _animator.SetFloat(directionX, movementInput.x);
         _animator.SetFloat(directionY, movementInput.y);
+        
+        
+        // Rotamos el personaje hacia la dirección de movimiento suavemente
+        if (moveInput != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveInput);
+            transform.rotation = Quaternion.Slerp(rigidbody.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        }
+            
+        
+        //transform.LookAt(transform.position + moveInput);
+        
+        //Rotacion instantanea
+        //if (moveInput != Vector3.zero)
+        //{
+            //Quaternion targetRotation = Quaternion.LookRotation(moveInput);
+            //transform.rotation = targetRotation;
+        //}
+        
         
         //Jumping
         if (_jumpAction.triggered && isGrounded && (!_animator.IsInTransition(0)))
