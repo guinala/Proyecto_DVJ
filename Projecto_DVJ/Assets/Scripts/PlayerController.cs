@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Audios")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpClip;
+    
     [Header("Movement")]
     [SerializeField] private float speedMovement;
     [SerializeField] private float rotationSpeed;
@@ -42,7 +46,7 @@ public class PlayerController : MonoBehaviour
         _jumpAction = _playerControls.actions["Jump"];
     }
     
-
+    
     private void Update()
     {
         OnMovement();
@@ -59,12 +63,21 @@ public class PlayerController : MonoBehaviour
         //Moving
         if(moveInput != Vector3.zero)
         {
+            // Si el vector de movimiento tiene magnitud (es decir, si nos estamos moviendo)
+            if (moveInput.magnitude > 0)
+            {
+                // Rotamos el personaje hacia la dirección de movimiento suavemente
+                //Quaternion targetRotation = Quaternion.LookRotation(moveInput);
+                //transform.rotation = Quaternion.Slerp(rigidbody.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+                
+                //Instantaneo
+                //transform.LookAt(transform.position + moveInput);
+                Quaternion targetRotation = Quaternion.LookRotation(moveInput);
+                transform.rotation = targetRotation;
+            }
+
+            // Movemos al personaje con el Rigidbody
             rigidbody.MovePosition(rigidbody.position + moveInput * speedMovement * Time.fixedDeltaTime);
-            
-            // Rotar hacia la dirección del movimiento
-            Quaternion targetRotation = Quaternion.LookRotation(moveInput, Vector3.up);
-            Quaternion smoothRotation = Quaternion.Slerp(rigidbody.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-            rigidbody.MoveRotation(smoothRotation);
         }
     }
 
@@ -86,15 +99,17 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetFloat(speed, 0);
         }
+        _animator.speed = 1.5f;
         _animator.SetFloat(directionX, movementInput.x);
         _animator.SetFloat(directionY, movementInput.y);
         
         //Jumping
-        if (_jumpAction.triggered && isGrounded)
+        if (_jumpAction.triggered && isGrounded && (!_animator.IsInTransition(0)))
         {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
             _animator.SetBool(jump, true);
             isGrounded = false;
+            audioSource.PlayOneShot(jumpClip);
         }
     }
     

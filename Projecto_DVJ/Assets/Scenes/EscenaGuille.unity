@@ -477,8 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250a4687d0d6414187b6cba3e9950d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMovement: 0.2
-  rotationSpeed: 5
+  audioSource: {fileID: 1131853175}
+  jumpClip: {fileID: 8300000, guid: eed2451bbd4264da8b6c27c92df62faf, type: 3}
+  speedMovement: 1
+  rotationSpeed: 1
   jumpForce: 5
   groundCheck: {fileID: 417950537}
   groundLayer:
@@ -1007,7 +1009,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131853173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6c68b138eec3094b8e3a96278085175, type: 3}
   m_Name: 
