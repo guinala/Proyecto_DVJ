@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerCopy : MonoBehaviour
 {
     [Header("Audios")]
     [SerializeField] private AudioSource audioSource;
@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speedMovement;
     [SerializeField] private float rotationSpeed;
+    
+    [Header("Camera")]
+    [SerializeField] private Transform cameraTransform; //Cinemachine
     
     [Header("Jumping")]
     [SerializeField] private float jumpForce;
@@ -77,6 +80,12 @@ public class PlayerController : MonoBehaviour
         moveInput = new Vector3(movementInput.x, 0, movementInput.y);
         float inputSpeed = movementInput.sqrMagnitude;
         
+        // Camera transform
+        Vector3 cameraForward = new Vector3(cameraTransform.forward.x, 0f, cameraTransform.forward.z).normalized;
+        Vector3 cameraRight = new Vector3(cameraTransform.right.x, 0f, cameraTransform.right.z).normalized;
+
+        // Input + Camera Transform
+        moveInput = (cameraForward * movementInput.y + cameraRight * movementInput.x).normalized;
 
         // Asignar la velocidad suavizada al Animator
         if(inputSpeed >= 0)
