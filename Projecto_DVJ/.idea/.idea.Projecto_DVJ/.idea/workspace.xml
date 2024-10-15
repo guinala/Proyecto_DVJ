@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4cb3e8a0-2aa4-4b79-872c-fc0b1a1a7f97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControls.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,7 @@
       <workItem from="1728420067353" duration="789000" />
       <workItem from="1728898273768" duration="654000" />
       <workItem from="1728921767097" duration="916000" />
-      <workItem from="1729008466481" duration="1060000" />
+      <workItem from="1729008466481" duration="4143000" />
     </task>
     <servers />
   </component>

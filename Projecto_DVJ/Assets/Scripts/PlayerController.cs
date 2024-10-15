@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Movement")]
     [SerializeField] private float speedMovement;
+    private float actualSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float toRestTime;
     
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     
     private bool isGrounded;
+    private float isRunning;
     private bool isResting;
     private float restingTimer;
     
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [Header("Smooth Input")]
     private PlayerInput _playerControls;
     private InputAction _movementAction;
+    private InputAction _runningAction;
     private InputAction _jumpAction;
     private Vector2 currentInput;
     private Vector2 smoothInputVelocity;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
     private readonly int jump = Animator.StringToHash("Jump");
     private readonly int speed = Animator.StringToHash("Speed");
     private readonly int resting = Animator.StringToHash("Rest");
+    private readonly int running = Animator.StringToHash("Running");
 
     [SerializeField] private float animatorSpeed = 1.5f;
 
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _movementAction = _playerControls.actions["Movement"];
         _jumpAction = _playerControls.actions["Jump"];
+        _runningAction = _playerControls.actions["Running"];
     }
     
     
@@ -74,12 +79,22 @@ public class PlayerController : MonoBehaviour
         if(moveInput != Vector3.zero)
         {
             // Movemos al personaje con el Rigidbody
-            rigidbody.MovePosition(rigidbody.position + moveInput * speedMovement * Time.fixedDeltaTime);
+            rigidbody.MovePosition(rigidbody.position + moveInput * actualSpeed * Time.fixedDeltaTime);
         }
     }
 
     public void OnMovement()
     {
+        //Speed ajustment
+        if (isRunning == 1)
+        {
+            actualSpeed = speedMovement * 2;
+        }
+        else
+        {
+            actualSpeed = speedMovement;
+        }
+        
         //Movement
         Vector2 movementInput = _movementAction.ReadValue<Vector2>();
         //currentInput = Vector2.SmoothDamp(currentInput, movementInput, ref smoothInputVelocity, smoothInputSpeed);
@@ -154,6 +169,19 @@ public class PlayerController : MonoBehaviour
                 isResting = false;
                 _animator.SetBool(resting, isResting);
             }
+        }
+        
+        //Running
+        if (_runningAction.IsPressed() && isRunning == 0)
+        {
+            isRunning = 1;
+            _animator.SetFloat(running, isRunning);
+        }
+        
+        if (_runningAction.IsPressed() == false && isRunning == 1)
+        {
+            isRunning = 0;
+            _animator.SetFloat(running, isRunning);
         }
     }
     
