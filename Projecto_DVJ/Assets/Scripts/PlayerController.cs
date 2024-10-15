@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControllerCopy : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Audios")]
     [SerializeField] private AudioSource audioSource;
@@ -10,6 +10,7 @@ public class PlayerControllerCopy : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speedMovement;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float toRestTime;
     
     [Header("Camera")]
     [SerializeField] private Transform cameraTransform; //Cinemachine
@@ -19,7 +20,10 @@ public class PlayerControllerCopy : MonoBehaviour
     [SerializeField] private Transform groundCheck; 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.2f;
-    private bool isGrounded; 
+    
+    private bool isGrounded;
+    private bool isResting;
+    private float restingTimer;
     
     [Header("Dependencies")]
     private Rigidbody rigidbody;
@@ -39,6 +43,7 @@ public class PlayerControllerCopy : MonoBehaviour
     private readonly int directionY = Animator.StringToHash("DirectionY");
     private readonly int jump = Animator.StringToHash("Jump");
     private readonly int speed = Animator.StringToHash("Speed");
+    private readonly int resting = Animator.StringToHash("Rest");
 
     [SerializeField] private float animatorSpeed = 1.5f;
 
@@ -128,6 +133,27 @@ public class PlayerControllerCopy : MonoBehaviour
             _animator.SetBool(jump, true);
             isGrounded = false;
             audioSource.PlayOneShot(jumpClip);
+        }
+        
+        //Rest
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            restingTimer += Time.deltaTime;
+            //Debug.Log("tiempo de descanso:" + restingTimer);
+            if (restingTimer >= toRestTime)
+            {
+                isResting = true;
+                _animator.SetBool(resting, isResting);
+            }
+        }
+        else
+        {
+            restingTimer = 0f;
+            if (isResting)
+            {
+                isResting = false;
+                _animator.SetBool(resting, isResting);
+            }
         }
     }
     
