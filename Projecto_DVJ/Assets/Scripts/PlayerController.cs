@@ -40,6 +40,8 @@ public class PlayerControllerCopy : MonoBehaviour
     private readonly int jump = Animator.StringToHash("Jump");
     private readonly int speed = Animator.StringToHash("Speed");
 
+    [SerializeField] private float animatorSpeed = 1.5f;
+
     private void Awake()
     {
         _playerControls = GetComponent<PlayerInput>();
@@ -96,7 +98,7 @@ public class PlayerControllerCopy : MonoBehaviour
         {
             _animator.SetFloat(speed, 0);
         }
-        _animator.speed = 1.5f;
+        _animator.speed = animatorSpeed;
         _animator.SetFloat(directionX, movementInput.x);
         _animator.SetFloat(directionY, movementInput.y);
         
