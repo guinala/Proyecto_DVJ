@@ -7,6 +7,8 @@ public class RandomAudios : MonoBehaviour
     public AudioSource audioSource; // El AudioSource que reproducirá los clips
     public AudioClip[] audioClips;  // El array de clips de audio
 
+    [SerializeField] private float waitingTime;
+
     private void Start()
     {
         // Iniciar la corrutina que reproducirá un clip cada 5 segundos
@@ -18,7 +20,7 @@ public class RandomAudios : MonoBehaviour
         while (true)
         {
             // Esperar 5 segundos antes de reproducir el siguiente clip
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(waitingTime);
 
             // Seleccionar un clip aleatorio
             AudioClip randomClip = audioClips[Random.Range(0, audioClips.Length)];
