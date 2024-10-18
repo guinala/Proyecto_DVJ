@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene()
     {
+        Debug.Log("voy a acerasd");
         StartCoroutine(Helper.Fade(fadeCanvasGroup, 1, fadeDuration));
         StartCoroutine(LoadSceneCoroutine());
     }
@@ -25,13 +26,14 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadSceneCoroutine()
     {
         yield return new WaitForSeconds(fadeDuration);
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(ProcessLevelLoading(sceneName));
     }
 
     
 
     private IEnumerator ProcessLevelLoading(string request)
     {
+        Debug.Log("Hecho");
         if (request != null)
         {
             var currentLoadedLevel = SceneManager.GetActiveScene();
