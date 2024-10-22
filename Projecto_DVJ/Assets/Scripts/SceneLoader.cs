@@ -18,7 +18,6 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene()
     {
-        Debug.Log("voy a acerasd");
         StartCoroutine(Helper.Fade(fadeCanvasGroup, 1, fadeDuration));
         StartCoroutine(LoadSceneCoroutine());
     }
@@ -26,19 +25,15 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadSceneCoroutine()
     {
         yield return new WaitForSeconds(fadeDuration);
-        StartCoroutine(ProcessLevelLoading(sceneName));
+        //StartCoroutine(ProcessLevelLoading(sceneName));
+        SceneManager.LoadScene(sceneName);
+        ActivateLevel(sceneName);
     }
-
-    
 
     private IEnumerator ProcessLevelLoading(string request)
     {
-        Debug.Log("Hecho");
         if (request != null)
         {
-            var currentLoadedLevel = SceneManager.GetActiveScene();
-            SceneManager.UnloadSceneAsync(currentLoadedLevel);
-
             AsyncOperation loadSceneProcess = SceneManager.LoadSceneAsync(request, LoadSceneMode.Additive);
 
             // Level is being loaded, it could take some seconds (or not). Waiting until is fully loaded
@@ -49,14 +44,28 @@ public class SceneLoader : MonoBehaviour
 
             // Once the level is ready, activate it!
             ActivateLevel(request);
+
+            // Descargar la escena anterior (ahora que ya tenemos una nueva activa)
+            var currentLoadedLevel = SceneManager.GetActiveScene();
+            if (currentLoadedLevel.name != request)  // Evitar descargar la misma escena
+            {
+                SceneManager.UnloadSceneAsync(currentLoadedLevel);
+            }
         }
     }
 
     private void ActivateLevel(string name)
     {
-        // Set active
-        var loadedLevel = SceneManager.GetSceneByName(name);
-        SceneManager.SetActiveScene(loadedLevel);
+       bool loaded = false;
+       Scene scene = SceneManager.GetSceneByName(sceneName);
+       while(loaded == false)
+       {
+            if(scene.isLoaded)
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(name));
+                loaded = true;
+            }
+       }
 
         StartCoroutine(Helper.Fade(fadeCanvasGroup, 0, 1f));
     }
