@@ -27,7 +27,17 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(fadeDuration);
         //StartCoroutine(ProcessLevelLoading(sceneName));
         SceneManager.LoadScene(sceneName);
-        ActivateLevel(sceneName);
+        StartCoroutine(FadeOut());
+    }
+
+    private IEnumerator FadeOut()
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        while(scene.isLoaded == false)
+        {
+            yield return null;
+        }
+        StartCoroutine(Helper.Fade(fadeCanvasGroup, 0, fadeDuration));
     }
 
     private IEnumerator ProcessLevelLoading(string request)
@@ -58,6 +68,7 @@ public class SceneLoader : MonoBehaviour
     {
        bool loaded = false;
        Scene scene = SceneManager.GetSceneByName(sceneName);
+       /*
        while(loaded == false)
        {
             if(scene.isLoaded)
@@ -66,6 +77,7 @@ public class SceneLoader : MonoBehaviour
                 loaded = true;
             }
        }
+       */
 
         StartCoroutine(Helper.Fade(fadeCanvasGroup, 0, 1f));
     }
