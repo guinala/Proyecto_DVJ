@@ -6,8 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="4cb3e8a0-2aa4-4b79-872c-fc0b1a1a7f97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timelines/Initial.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/Initial.playable" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +113,7 @@
       <workItem from="1729008466481" duration="4143000" />
       <workItem from="1729190250689" duration="1193000" />
       <workItem from="1729261569531" duration="1101000" />
+      <workItem from="1730029177595" duration="1212000" />
     </task>
     <servers />
   </component>
