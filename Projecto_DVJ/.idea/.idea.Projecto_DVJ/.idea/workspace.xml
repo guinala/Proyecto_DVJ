@@ -23,7 +23,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timelines/CheckTimeline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timelines/CheckTimeline.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Timelines/Initial.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/Initial.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timelines/InitialTimeline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/InitialTimeline.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +118,7 @@
       <workItem from="1729190250689" duration="1193000" />
       <workItem from="1729261569531" duration="1101000" />
       <workItem from="1730029177595" duration="1212000" />
+      <workItem from="1730046795800" duration="1676000" />
     </task>
     <servers />
   </component>

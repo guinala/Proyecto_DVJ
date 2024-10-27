@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 1f;
 
-    [SerializeField] private string sceneName; 
+    [SerializeField] private string sceneName;
 
     void Awake()
     {
@@ -53,7 +54,7 @@ public class SceneLoader : MonoBehaviour
             }
 
             // Once the level is ready, activate it!
-            ActivateLevel(request);
+            FadeIn(request);
 
             // Descargar la escena anterior (ahora que ya tenemos una nueva activa)
             var currentLoadedLevel = SceneManager.GetActiveScene();
@@ -64,7 +65,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    private void ActivateLevel(string name)
+    private void FadeIn(string name)
     {
        bool loaded = false;
        Scene scene = SceneManager.GetSceneByName(sceneName);
