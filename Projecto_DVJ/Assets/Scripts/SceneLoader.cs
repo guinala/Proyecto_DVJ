@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : Singleton<SceneLoader>
 {
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 1f;
@@ -82,5 +82,6 @@ public class SceneLoader : MonoBehaviour
 
         StartCoroutine(Helper.Fade(fadeCanvasGroup, 0, 1f));
     }
+    
     
 }

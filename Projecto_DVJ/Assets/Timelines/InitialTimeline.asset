@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeline: {fileID: 11400000, guid: 15194bb5afe1c29449480169763e39bf, type: 2}
   Type: 0
-  played: 1
+  played: 0
   Once: 1
