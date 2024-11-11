@@ -112,6 +112,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GameSettings",
+            "id": "7df11bd9-520f-4892-bdb0-fe1ddfdac768",
+            "actions": [
+                {
+                    "name": "Graphics",
+                    "type": "Button",
+                    "id": "29f7a2bc-0120-49d0-b89b-3afe5f826cb8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4a3a2376-6a95-4fa7-96a7-b5b2a5882467",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Graphics",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d320b7f5-9e9b-4b5e-bc5b-ef82ae69e690",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Graphics",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a172b19a-896c-425a-92c8-af987df6ad2d",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Graphics",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
