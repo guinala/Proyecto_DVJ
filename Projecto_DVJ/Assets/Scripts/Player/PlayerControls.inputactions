@@ -125,6 +125,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FullScreen",
+                    "type": "Button",
+                    "id": "0f3ae7f1-2d09-42fc-84a8-a108b9bfd61a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Show/Hide FPS",
+                    "type": "Button",
+                    "id": "c5274b3c-bcfd-41de-af19-fa7963fa1378",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeResolution",
+                    "type": "Button",
+                    "id": "4b5c6fa7-15d0-4d0c-b4be-f552433eb4fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -158,6 +185,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Graphics",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17638f36-03a7-497d-9d91-40b1d22f222e",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FullScreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79b4b3af-2333-4cad-9560-2d48f366bfb1",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Show/Hide FPS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08533896-67cd-4ae1-a1c9-463346e8f51c",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeResolution",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

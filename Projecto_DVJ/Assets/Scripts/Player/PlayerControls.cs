@@ -147,6 +147,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FullScreen"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f3ae7f1-2d09-42fc-84a8-a108b9bfd61a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Show/Hide FPS"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5274b3c-bcfd-41de-af19-fa7963fa1378"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeResolution"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b5c6fa7-15d0-4d0c-b4be-f552433eb4fb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -182,6 +209,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Graphics"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17638f36-03a7-497d-9d91-40b1d22f222e"",
+                    ""path"": ""<Keyboard>/f12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FullScreen"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79b4b3af-2333-4cad-9560-2d48f366bfb1"",
+                    ""path"": ""<Keyboard>/f11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Show/Hide FPS"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08533896-67cd-4ae1-a1c9-463346e8f51c"",
+                    ""path"": ""<Keyboard>/f10"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeResolution"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -196,6 +256,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // GameSettings
         m_GameSettings = asset.FindActionMap("GameSettings", throwIfNotFound: true);
         m_GameSettings_Graphics = m_GameSettings.FindAction("Graphics", throwIfNotFound: true);
+        m_GameSettings_FullScreen = m_GameSettings.FindAction("FullScreen", throwIfNotFound: true);
+        m_GameSettings_ShowHideFPS = m_GameSettings.FindAction("Show/Hide FPS", throwIfNotFound: true);
+        m_GameSettings_ChangeResolution = m_GameSettings.FindAction("ChangeResolution", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -320,11 +383,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_GameSettings;
     private List<IGameSettingsActions> m_GameSettingsActionsCallbackInterfaces = new List<IGameSettingsActions>();
     private readonly InputAction m_GameSettings_Graphics;
+    private readonly InputAction m_GameSettings_FullScreen;
+    private readonly InputAction m_GameSettings_ShowHideFPS;
+    private readonly InputAction m_GameSettings_ChangeResolution;
     public struct GameSettingsActions
     {
         private @PlayerControls m_Wrapper;
         public GameSettingsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Graphics => m_Wrapper.m_GameSettings_Graphics;
+        public InputAction @FullScreen => m_Wrapper.m_GameSettings_FullScreen;
+        public InputAction @ShowHideFPS => m_Wrapper.m_GameSettings_ShowHideFPS;
+        public InputAction @ChangeResolution => m_Wrapper.m_GameSettings_ChangeResolution;
         public InputActionMap Get() { return m_Wrapper.m_GameSettings; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -337,6 +406,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Graphics.started += instance.OnGraphics;
             @Graphics.performed += instance.OnGraphics;
             @Graphics.canceled += instance.OnGraphics;
+            @FullScreen.started += instance.OnFullScreen;
+            @FullScreen.performed += instance.OnFullScreen;
+            @FullScreen.canceled += instance.OnFullScreen;
+            @ShowHideFPS.started += instance.OnShowHideFPS;
+            @ShowHideFPS.performed += instance.OnShowHideFPS;
+            @ShowHideFPS.canceled += instance.OnShowHideFPS;
+            @ChangeResolution.started += instance.OnChangeResolution;
+            @ChangeResolution.performed += instance.OnChangeResolution;
+            @ChangeResolution.canceled += instance.OnChangeResolution;
         }
 
         private void UnregisterCallbacks(IGameSettingsActions instance)
@@ -344,6 +422,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Graphics.started -= instance.OnGraphics;
             @Graphics.performed -= instance.OnGraphics;
             @Graphics.canceled -= instance.OnGraphics;
+            @FullScreen.started -= instance.OnFullScreen;
+            @FullScreen.performed -= instance.OnFullScreen;
+            @FullScreen.canceled -= instance.OnFullScreen;
+            @ShowHideFPS.started -= instance.OnShowHideFPS;
+            @ShowHideFPS.performed -= instance.OnShowHideFPS;
+            @ShowHideFPS.canceled -= instance.OnShowHideFPS;
+            @ChangeResolution.started -= instance.OnChangeResolution;
+            @ChangeResolution.performed -= instance.OnChangeResolution;
+            @ChangeResolution.canceled -= instance.OnChangeResolution;
         }
 
         public void RemoveCallbacks(IGameSettingsActions instance)
@@ -370,5 +457,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IGameSettingsActions
     {
         void OnGraphics(InputAction.CallbackContext context);
+        void OnFullScreen(InputAction.CallbackContext context);
+        void OnShowHideFPS(InputAction.CallbackContext context);
+        void OnChangeResolution(InputAction.CallbackContext context);
     }
 }
