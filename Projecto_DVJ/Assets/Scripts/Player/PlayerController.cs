@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
         //Speed ajustment
         if (isRunning == 1)
         {
-            actualSpeed = speedMovement * 2;
+            actualSpeed = speedMovement;
         }
         else
         {
-            actualSpeed = speedMovement;
+            actualSpeed = speedMovement/3;
         }
         
         //Movement
