@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,10 +19,8 @@ public class PlayerController_CharacterController : MonoBehaviour
     
     [Header("Jumping")]
     [SerializeField] private float jumpForce;
-    [SerializeField] private Transform groundCheck; 
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private float jumpGracePeriod;
+    [SerializeField] private float jumpHorizontalSpeed;
     private float ySpeed;
     private float originalStepOffset;
 
@@ -30,6 +29,9 @@ public class PlayerController_CharacterController : MonoBehaviour
     private float? jumpPressedTime;
     
     private float isRunning;
+    private bool isJumping;
+    private bool isGrounded;
+    private bool isFalling;
     private bool isResting;
     private float restingTimer;
     
@@ -51,6 +53,7 @@ public class PlayerController_CharacterController : MonoBehaviour
     private readonly int directionX = Animator.StringToHash("DirectionX");
     private readonly int directionY = Animator.StringToHash("DirectionY");
     private readonly int jump = Animator.StringToHash("Jump");
+    private readonly int IsGrounded = Animator.StringToHash("isGrounded");
     private readonly int speed = Animator.StringToHash("Speed");
     private readonly int resting = Animator.StringToHash("Rest");
     private readonly int restingLong = Animator.StringToHash("LongRest");
@@ -58,6 +61,9 @@ public class PlayerController_CharacterController : MonoBehaviour
 
     [SerializeField] private float animatorSpeed = 1.5f;
 
+
+    
+    
     private void Awake()
     {
         _playerControls = GetComponent<PlayerInput>();
@@ -115,10 +121,18 @@ public class PlayerController_CharacterController : MonoBehaviour
         {
             characterController.stepOffset = originalStepOffset;
             ySpeed = -0.5f;
+            _animator.SetBool(IsGrounded, true);
+            isGrounded = true;
+            _animator.SetBool(jump, false);
+            isJumping = false;
+            _animator.SetBool("isFalling", false);
+            
+            
             if (Time.time - jumpPressedTime <= jumpGracePeriod)
             {
                 ySpeed = jumpForce;
                 _animator.SetBool(jump, true);
+                isJumping = true;
                 audioSource.PlayOneShot(jumpClip);
                 jumpPressedTime = null;
                 lastGroundedTime = null;
@@ -127,14 +141,33 @@ public class PlayerController_CharacterController : MonoBehaviour
         else
         {
             characterController.stepOffset = 0f;
+            _animator.SetBool(IsGrounded, false);
+            isGrounded = false;
+            
+            if((isJumping && ySpeed < 0) || ySpeed < -2)
+            {
+                _animator.SetBool("isFalling", true);
+                //isFalling = true;
+            }
         }
-
+        
+        Vector3 velocity;
+        float finalMagnitude = Mathf.Clamp01(moveInput.magnitude)*actualSpeed;
+        
+      
         // Input + Camera Transform
         moveInput = (cameraForward * movementInput.y + cameraRight * movementInput.x).normalized;
-        float finalMagnitude = Mathf.Clamp01(moveInput.magnitude)*actualSpeed;
-        Vector3 velocity = moveInput * finalMagnitude;
-        velocity.y = ySpeed;
+        velocity = moveInput * finalMagnitude;
+        velocity.y = ySpeed; 
         characterController.Move(velocity*Time.deltaTime);
+        
+        // else
+        // {
+        //     velocity = movementInput * finalMagnitude * jumpHorizontalSpeed;
+        //     velocity.y = ySpeed;
+        //     characterController.Move(velocity*Time.deltaTime);
+        // }
+        //Prueba Rootmotion en OnAnimatorMove
 
         // Asignar la velocidad suavizada al Animator
         if(inputSpeed >= 0)
@@ -155,7 +188,17 @@ public class PlayerController_CharacterController : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(moveInput);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
         }
-            
+        
+        if (isGrounded == false)
+        {
+            float inputMagnitude = Mathf.Clamp01(moveInput.magnitude);
+            velocity = moveInput * inputMagnitude * jumpHorizontalSpeed;
+            Debug.Log(inputMagnitude +" " +  finalMagnitude);
+            velocity.y = ySpeed;
+
+            characterController.Move(velocity * Time.deltaTime);
+        }
+        
         
         //transform.LookAt(transform.position + moveInput);
         
@@ -210,4 +253,12 @@ public class PlayerController_CharacterController : MonoBehaviour
             _animator.SetFloat(running, isRunning);
         }
     }
+
+    // private void OnAnimatorMove()
+    // {
+    //     //float finalMagnitude = Mathf.Clamp01(moveInput.magnitude)*actualSpeed;
+    //     Vector3 velocity = _animator.deltaPosition;
+    //     velocity.y = ySpeed*Time.deltaTime;
+    //     characterController.Move(velocity);
+    // }
 }

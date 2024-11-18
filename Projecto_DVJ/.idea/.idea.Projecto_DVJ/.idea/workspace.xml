@@ -8,26 +8,43 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Cattail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Cattail.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscenaGuille.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscenaGuille.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/Braced Hang To Crouch.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/Braced Hang To Crouch.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Fall A Land To Standing Idle 01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Fall A Land To Standing Idle 01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Fall A Loop.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Fall A Loop.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Falling.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Falling.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Jumping Up.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mixamo/unitychan@Jumping Up.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/unitychan@Falling Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/unitychan@Falling Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController_CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController_CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_ARpose1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_ARpose1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_ARpose2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_ARpose2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_DAMAGED00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_DAMAGED00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_DAMAGED01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_DAMAGED01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_HANDUP00_R.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_HANDUP00_R.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP00B.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP00B.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP01B.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_JUMP01B.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_LOSE00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_LOSE00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_REFLESH00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_REFLESH00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_F.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_F.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_L.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_L.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_R.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_RUN00_R.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_SLIDE00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_SLIDE00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_UMATOBI00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_UMATOBI00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT00.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT02.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT02.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT03.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT03.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT04.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WAIT04.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_B.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_B.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_F.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_F.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_L.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_L.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_R.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_R.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WIN00.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WIN00.fbx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +55,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ObstaclePush.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController_CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -132,6 +150,8 @@
       <workItem from="1731772258361" duration="1577000" />
       <workItem from="1731775177907" duration="1297000" />
       <workItem from="1731859026492" duration="10233000" />
+      <workItem from="1731947042587" duration="1214000" />
+      <workItem from="1731954377342" duration="6403000" />
     </task>
     <servers />
   </component>

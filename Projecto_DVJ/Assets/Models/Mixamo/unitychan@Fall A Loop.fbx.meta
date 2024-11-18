@@ -13,13 +13,56 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'Character1_LeftUpLeg'
+      : position error = 105.977844 mm\n\t'Character1_LeftLeg' : position error =
+      393.812195 mm\n\t'Character1_LeftFoot' : position error = 423.777161 mm\n\t'Character1_LeftToeBase'
+      : position error = 108.478004 mm\n\t'Character1_RightUpLeg' : position error
+      = 105.977562 mm\n\t'Character1_RightLeg' : position error = 393.813568 mm\n\t'Character1_RightFoot'
+      : position error = 423.778107 mm\n\t'Character1_RightToeBase' : position error
+      = 108.479454 mm\n\t'Character1_Spine' : position error = 27.015415 mm\n\t'Character1_Spine1'
+      : position error = 102.233948 mm\n\t'Character1_Spine2' : position error =
+      98.101311 mm\n\t'Character1_LeftShoulder' : position error = 144.862854 mm\n\t'Character1_LeftArm'
+      : position error = 62.034882 mm\n\t'Character1_LeftForeArm' : position error
+      = 261.600891 mm\n\t'Character1_LeftHand' : position error = 181.820236 mm\n\t'Character1_LeftHandThumb1'
+      : position error = 37.938114 mm\n\t'Character1_LeftHandThumb2' : position error
+      = 36.080200 mm\n\t'Character1_LeftHandThumb3' : position error = 19.688929
+      mm\n\t'Character1_LeftHandIndex1' : position error = 94.844147 mm\n\t'Character1_LeftHandIndex2'
+      : position error = 27.324677 mm\n\t'Character1_LeftHandIndex3' : position error
+      = 18.020266 mm\n\t'Character1_LeftHandMiddle1' : position error = 90.785347
+      mm\n\t'Character1_LeftHandMiddle2' : position error = 28.413977 mm\n\t'Character1_LeftHandMiddle3'
+      : position error = 21.744667 mm\n\t'Character1_LeftHandRing1' : position error
+      = 87.366127 mm\n\t'Character1_LeftHandRing2' : position error = 26.543238 mm\n\t'Character1_LeftHandRing3'
+      : position error = 17.827696 mm\n\t'Character1_LeftHandPinky1' : position error
+      = 79.941086 mm\n\t'Character1_LeftHandPinky2' : position error = 20.251158
+      mm\n\t'Character1_LeftHandPinky3' : position error = 15.568823 mm\n\t'Character1_RightShoulder'
+      : position error = 144.862839 mm\n\t'Character1_RightArm' : position error
+      = 62.035389 mm\n\t'Character1_RightForeArm' : position error = 261.603058 mm\n\t'Character1_RightHand'
+      : position error = 181.818359 mm\n\t'Character1_RightHandThumb1' : position
+      error = 37.938114 mm\n\t'Character1_RightHandThumb2' : position error = 35.870152
+      mm\n\t'Character1_RightHandThumb3' : position error = 19.688341 mm\n\t'Character1_RightHandIndex1'
+      : position error = 94.844765 mm\n\t'Character1_RightHandIndex2' : position
+      error = 27.324352 mm\n\t'Character1_RightHandIndex3' : position error = 18.021069
+      mm\n\t'Character1_RightHandMiddle1' : position error = 90.785316 mm\n\t'Character1_RightHandMiddle2'
+      : position error = 28.412987 mm\n\t'Character1_RightHandMiddle3' : position
+      error = 21.746006 mm\n\t'Character1_RightHandRing1' : position error = 87.365517
+      mm\n\t'Character1_RightHandRing2' : position error = 26.541817 mm\n\t'Character1_RightHandRing3'
+      : position error = 17.827753 mm\n\t'Character1_RightHandPinky1' : position
+      error = 79.940727 mm\n\t'Character1_RightHandPinky2' : position error = 20.252367
+      mm\n\t'Character1_RightHandPinky3' : position error = 15.568684 mm\n\t'Character1_Neck'
+      : position error = 175.765244 mm\n\t'Character1_Head' : position error = 87.595757
+      mm\nCopied Avatar Rig Configuration mis-match. Inbetween bone rotation in copied
+      configuration does not match rotation in animation file:\n\t'Character1_Spine'
+      : rotation error = 30.893690 deg\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Character1_Spine' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -31,7 +74,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fall A Loop
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -93,8 +165,8 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
-    skeletonHasParents: 1
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
