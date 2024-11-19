@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: b085b262a13a33e44b78eb76012c9d1f
   - enabled: 1
-    path: Assets/Idyllic Fantasy Nature/Demo/Pruebas.unity
+    path: Assets/Assets de niveles/Idyllic Fantasy Nature/Demo/Pruebas.unity
     guid: d044d671017374a4d814a6ac30434688
   - enabled: 1
     path: Assets/Scenes/EscenaPrincipal.unity
