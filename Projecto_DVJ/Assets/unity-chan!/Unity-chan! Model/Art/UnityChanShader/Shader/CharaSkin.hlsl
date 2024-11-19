@@ -112,5 +112,5 @@ float4 frag(Varyings i) : SV_Target
         combinedColor = lerp(shadowColor, combinedColor, attenuation);
     #endif
 
-    return float4(combinedColor, diffSamplerColor.a) * _Color * _LightColor0;
+    return float4(combinedColor, diffSamplerColor.a) * _Color * (0.1 + (_LightColor0 * 0.9));
 }
