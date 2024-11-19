@@ -178,7 +178,7 @@ float4 frag( Varyings i ) : SV_Target
 	reflectColor = GetOverlayColor( reflectColor, combinedColor );
 
 	combinedColor = lerp( combinedColor, reflectColor, reflectionMaskColor.a );
-	combinedColor *= _Color.rgb * _LightColor0.rgb;
+	combinedColor *= _Color.rgb * (half3 (0.1f, 0.1f, 0.1f) + (_LightColor0.rgb * 0.9f));
 	float opacity = diffSamplerColor.a * _Color.a * _LightColor0.a;
 
 #ifdef ENABLE_CAST_SHADOWS
