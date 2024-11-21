@@ -4669,7 +4669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1044763433
 Light:
   m_ObjectHideFlags: 0
@@ -5500,7 +5500,8 @@ MonoBehaviour:
   rotationSpeed: 20
   toRestTime: 5
   cameraTransform: {fileID: 1180678789}
-  jumpForce: 7
+  jumpHeight: 2
+  gravityMultiplier: 1.5
   jumpGracePeriod: 0.2
   jumpHorizontalSpeed: 3
   smoothInputSpeed: 0.2
@@ -5910,7 +5911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197528028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0884976, y: -0.6843167, z: 0.084243216, w: 0.7188755}
+  m_LocalRotation: {x: 0.08849761, y: -0.6843167, z: 0.08424322, w: 0.7188755}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -18,7 +18,8 @@ public class PlayerController_CharacterController : MonoBehaviour
     [SerializeField] private Transform cameraTransform; //Cinemachine
     
     [Header("Jumping")]
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float gravityMultiplier;
     [SerializeField] private float jumpGracePeriod;
     [SerializeField] private float jumpHorizontalSpeed;
     private float ySpeed;
@@ -104,14 +105,20 @@ public class PlayerController_CharacterController : MonoBehaviour
         Vector3 cameraForward = new Vector3(cameraTransform.forward.x, 0f, cameraTransform.forward.z).normalized;
         Vector3 cameraRight = new Vector3(cameraTransform.right.x, 0f, cameraTransform.right.z).normalized;
         
-        ySpeed += Physics.gravity.y * Time.deltaTime;
+        float gravity = Physics.gravity.y * gravityMultiplier;
+        
+        if(isJumping && ySpeed > 0 && !_jumpAction.IsPressed())
+        {
+            gravity *= 2;
+        }
+        ySpeed += gravity * Time.deltaTime;
         
         if(characterController.isGrounded)
         {
             lastGroundedTime = Time.time;
         }
 
-        if (_jumpAction.triggered && (!_animator.IsInTransition(0)))
+        if (_jumpAction.IsPressed() && (!_animator.IsInTransition(0)))
         {
             jumpPressedTime = Time.time;
         }
@@ -130,7 +137,7 @@ public class PlayerController_CharacterController : MonoBehaviour
             
             if (Time.time - jumpPressedTime <= jumpGracePeriod)
             {
-                ySpeed = jumpForce;
+                ySpeed = Mathf.Sqrt(jumpHeight * -3 * gravity);
                 _animator.SetBool(jump, true);
                 isJumping = true;
                 audioSource.PlayOneShot(jumpClip);
