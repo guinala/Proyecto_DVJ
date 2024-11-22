@@ -1826,9 +1826,9 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
-      in configuration does not match rotation in animation file:\n\t'Character1_Spine'
-      : rotation error = 4.259843 deg\n"
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'Character1_Spine'
+      : rotation error = 4.259846 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -1850,7 +1850,7 @@ ModelImporter:
       name: SLIDE00
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
+      firstFrame: 8
       lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0

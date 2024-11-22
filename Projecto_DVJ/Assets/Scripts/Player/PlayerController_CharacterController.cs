@@ -61,9 +61,33 @@ public class PlayerController_CharacterController : MonoBehaviour
     private readonly int running = Animator.StringToHash("Running");
 
     [SerializeField] private float animatorSpeed = 1.5f;
-
-
     
+    [Header("Sliding")]
+    public float slideSpeedThreshold = 6f; // Minimum speed needed to begin sliding
+    public float addedSlideSpeed = 3f; // Adding flat speed + also add a percentage of horizontal speed up to 66% of base speed
+    public float slideSpeedDampening = 0.99f; // The speed will be multiplied by this every frame (to stop in ~3 seconds)
+    public float keepSlidingSpeedThreshold = 3f; // As long as speed is above this, keep sliding
+    public float slideSteeringPower = 0.5f; // How much you can steer around while sliding
+    private InputAction _slideAction;
+
+    bool isSliding = false;
+    bool slideInitiated = false;
+
+    private bool slideKeyPressed; // Variable para detectar la tecla de deslizamiento
+    
+    
+    // Método para suscribirse al Input System
+    private void OnEnable()
+    {
+        _slideAction.performed += _ => slideKeyPressed = true;
+        _slideAction.canceled += _ => slideKeyPressed = false;
+    }
+
+    private void OnDisable()
+    {
+        _slideAction.performed -= _ => slideKeyPressed = true;
+        _slideAction.canceled -= _ => slideKeyPressed = false;
+    }
     
     private void Awake()
     {
@@ -72,6 +96,7 @@ public class PlayerController_CharacterController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _movementAction = _playerControls.actions["Movement"];
         _jumpAction = _playerControls.actions["Jump"];
+        _slideAction = _playerControls.actions["Slide"];
         _runningAction = _playerControls.actions["Running"];
         originalStepOffset = characterController.stepOffset;
     }
@@ -80,6 +105,7 @@ public class PlayerController_CharacterController : MonoBehaviour
     private void Update()
     {
         OnMovement();
+        Slide();
     }
 
     public void OnMovement()
@@ -216,6 +242,12 @@ public class PlayerController_CharacterController : MonoBehaviour
             //transform.rotation = targetRotation;
         //}
         
+        // Iniciar el deslizamiento si la tecla está presionada y el jugador está en tierra
+        if (slideKeyPressed && isGrounded && !isSliding)
+        {
+            slideInitiated = true; // Marca que se debe iniciar el deslizamiento
+        }
+        
         
         //Rest
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -268,4 +300,77 @@ public class PlayerController_CharacterController : MonoBehaviour
     //     velocity.y = ySpeed*Time.deltaTime;
     //     characterController.Move(velocity);
     // }
+    
+        #region Sliding
+
+        void Slide()
+        {
+            if (slideInitiated)
+            {
+                if (!isGrounded) return; // No iniciar deslizamiento en el aire
+
+                // Iniciar deslizamiento
+                slideInitiated = false;
+
+                if (isSliding) return; // Evitar iniciar deslizamiento si ya está activo
+
+                // Revisar velocidad horizontal para comenzar a deslizar
+                Vector3 horizontalVelocity = new Vector3(moveInput.x, 0, moveInput.z) * actualSpeed;
+                float horizontalSpeed = horizontalVelocity.magnitude;
+
+                if (horizontalSpeed < slideSpeedThreshold) return;
+
+                StartSliding(horizontalVelocity);
+            }
+
+            // Mantener el deslizamiento mientras haya suficiente velocidad
+            if (isSliding)
+            {
+                // Reducir velocidad progresivamente
+                Vector3 newVelocity = moveInput * actualSpeed * slideSpeedDampening;
+                if (newVelocity.magnitude > keepSlidingSpeedThreshold)
+                {
+                    characterController.Move(newVelocity * Time.deltaTime);
+                }
+                else
+                {
+                    StopSliding();
+                }
+            }
+        }
+
+        void StartSliding(Vector3 initialVelocity)
+        {
+            slideInitiated = false;
+            SetIsSliding(true);
+
+            // // Ajustar la posición de la cámara (simulando efecto visual)
+            // Vector3 cameraTargetPosition = cameraTransform.localPosition + new Vector3(0, -0.4f, 0);
+            // cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraTargetPosition, 0.2f);
+
+            // Agregar un impulso adicional al deslizamiento
+            float currentSpeedModifier = Mathf.Clamp(initialVelocity.magnitude / 40f, 0, 1);
+            float boost = addedSlideSpeed + Mathf.Lerp(0, addedSlideSpeed * 2f, currentSpeedModifier);
+
+            Vector3 slideDirection = initialVelocity.normalized;
+            moveInput = slideDirection * (actualSpeed + boost); // Añadimos el boost al input
+        }
+
+        void StopSliding()
+        {
+            SetIsSliding(false);
+
+            // // Restaurar la posición de la cámara
+            // Vector3 cameraOriginalPosition = cameraTransform.localPosition + new Vector3(0, 0.4f, 0);
+            // cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraOriginalPosition, 0.2f);
+        }
+
+        void SetIsSliding(bool state)
+        {
+            isSliding = state;
+            _animator.SetBool("Slide", isSliding); // Control opcional para animación
+        }
+
+        #endregion
+
 }

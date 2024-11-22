@@ -6,9 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="4cb3e8a0-2aa4-4b79-872c-fc0b1a1a7f97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projecto_DVJ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscenaGuille.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscenaGuille.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UnityChanCustom.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Bushes/Bush_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Flowers/Flower.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Flowers/FlowerMeadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Grass/Grass_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Plants/Plant.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Broadleaf_Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Fir_Branch.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Tree_Blossoms.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Cattail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Cattail.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets de niveles/Idyllic Fantasy Nature/Materials/Waterplants/Reeds_03.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController_CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController_CharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +136,8 @@
       <workItem from="1731954377342" duration="6403000" />
       <workItem from="1732211268512" duration="1216000" />
       <workItem from="1732212607743" duration="18000" />
+      <workItem from="1732226900809" duration="938000" />
+      <workItem from="1732297436600" duration="241000" />
     </task>
     <servers />
   </component>
