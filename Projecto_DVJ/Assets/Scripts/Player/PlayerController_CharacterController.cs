@@ -226,7 +226,6 @@ public class PlayerController_CharacterController : MonoBehaviour
         {
             float inputMagnitude = Mathf.Clamp01(moveInput.magnitude);
             velocity = moveInput * inputMagnitude * jumpHorizontalSpeed;
-            Debug.Log(inputMagnitude +" " +  finalMagnitude);
             velocity.y = ySpeed;
 
             characterController.Move(velocity * Time.deltaTime);
@@ -253,7 +252,6 @@ public class PlayerController_CharacterController : MonoBehaviour
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             restingTimer += Time.deltaTime;
-            Debug.Log("tiempo de descanso:" + restingTimer);
             if (restingTimer >= toRestTime)
             {
                 isResting = true;

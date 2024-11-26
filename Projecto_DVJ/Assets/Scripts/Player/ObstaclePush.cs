@@ -20,6 +20,13 @@ public class ObstaclePush : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        if (hit.collider.CompareTag("Player"))
+        {
+            Debug.Log("Golpeo");
+            Animator animator = hit.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Hit");
+        }
+        
         Rigidbody rb = hit.collider.attachedRigidbody;
 
         if (rb != null)
@@ -30,5 +37,10 @@ public class ObstaclePush : MonoBehaviour
             
             rb.AddForceAtPosition(forceDirection*forceMagnitude, transform.position, ForceMode.Impulse);
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        
     }
 }
